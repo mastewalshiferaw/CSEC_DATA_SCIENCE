@@ -38,7 +38,7 @@ class StatEngine:
         mean = self.get_mean()
         squared_diffs = [(x - mean) ** 2 for x in self.data]
         return sum(squared_diffs) / (n - 1 if is_sample else n)
-
+        #Bessel (n-1), due to the sample might not show the real data
     def get_standard_deviation(self, is_sample: bool = True) -> float:
         return math.sqrt(self.get_variance(is_sample))
 
